@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁開發專案經理履歷</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .resume-header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 2rem 0;
+        }
+        .profile-img {
+            border: 5px solid rgba(255, 255, 255, 0.3);
+        }
+        .section-title {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .skill-item {
+            background-color: #e9ecef;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .progress {
+            height: 10px;
+        }
+        .exp-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="resume-header">
+        <div class="container text-center">
+            <img src="/api/placeholder/150/150" class="rounded-circle profile-img" alt="個人照片">
+            <h1 class="mt-4">陳志明</h1>
+            <p class="lead">資深網頁開發專案經理</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p>專業、負責、高效能的專案管理專家，擁有超過8年網頁開發專案管理經驗，精通敏捷開發方法論。</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-4 mb-4">
+                <!-- Contact Info -->
+                <section class="mb-5">
+                    <h3 class="section-title">聯絡資訊</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> chihming.chen@email.com</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (02) 2345-6789</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 台北市信義區</li>
+                        <li class="mb-2"><i class="fab fa-linkedin me-2"></i> linkedin.com/in/chihming-chen</li>
+                        <li class="mb-2"><i class="fab fa-github me-2"></i> github.com/chihming-chen</li>
+                    </ul>
+                </section>
+
+                <!-- Skills -->
+                <section class="mb-5">
+                    <h3 class="section-title">專業技能</h3>
+                    <div class="mb-4">
+                        <span class="skill-item">敏捷專案管理</span>
+                        <span class="skill-item">Scrum</span>
+                        <span class="skill-item">Kanban</span>
+                        <span class="skill-item">JIRA</span>
+                        <span class="skill-item">Confluence</span>
+                        <span class="skill-item">MS Project</span>
+                        <span class="skill-item">Trello</span>
+                        <span class="skill-item">風險管理</span>
+                        <span class="skill-item">需求分析</span>
+                        <span class="skill-item">資源規劃</span>
+                    </div>
+                </section>
+
+                <!-- Technical Skills -->
+                <section class="mb-5">
+                    <h3 class="section-title">技術能力</h3>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>前端開發技術</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>後端開發技術</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>UI/UX設計</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>資料庫管理</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages -->
+                <section class="mb-5">
+                    <h3 class="section-title">語言能力</h3>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>中文 (母語)</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>英文</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>日文</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-8">
+                <!-- About Me -->
+                <section class="mb-5">
+                    <h3 class="section-title">關於我</h3>
+                    <p>我是一位資深網頁開發專案經理，擁有超過8年的專案管理經驗，專精於敏捷開發方法論和跨部門協作。我善於協調開發團隊與客戶需求，確保專案能夠在時間和預算內完成。具備良好的溝通能力和問題解決技巧，能有效管理風險並提高團隊生產力。技術背景使我能夠更好地理解開發過程中的挑戰，並與開發人員有效溝通。</p>
+                </section>
+
+                <!-- Experience -->
+                <section class="mb-5">
+                    <h3 class="section-title">工作經歷</h3>
+                    
+                    <!-- Job 1 -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4>高級網頁開發專案經理</h4>
+                            <h6 class="text-primary">鋒揚科技有限公司</h6>
+                            <p class="exp-date">2020年6月 - 至今</p>
+                            <p>負責公司核心產品線的網頁應用開發專案，管理15人跨職能團隊。</p>
+                            <ul>
+                                <li>成功領導電子商務平台重構專案，按時完成並比原計劃節省20%預算</li>
+                                <li>導入敏捷Scrum開發流程，提高團隊生產力30%</li>
+                                <li>優化專案風險評估流程，降低專案延期率40%</li>
+                                <li>協調產品、設計、開發和測試團隊，確保專案順利進行</li>
+                                <li>建立完善的專案文檔系統，提高知識傳承效率</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4>網頁開發專案經理</h4>
+                            <h6 class="text-primary">創新數位整合行銷股份有限公司</h6>
+                            <p class="exp-date">2017年3月 - 2020年5月</p>
+                            <p>負責客戶網站和數位行銷專案的規劃與執行。</p>
+                            <ul>
+                                <li>同時管理5-7個中小型網站開發專案，客戶滿意度達95%</li>
+                                <li>建立標準化專案管理流程，縮短專案啟動時間50%</li>
+                                <li>優化資源分配策略，提高團隊整體效率25%</li>
+                                <li>成功管理大型金融客戶的網站改版專案，獲得行業獎項</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>前端開發工程師</h4>
+                            <h6 class="text-primary">網路新視界科技有限公司</h6>
+                            <p class="exp-date">2015年7月 - 2017年2月</p>
+                            <p>負責網站前端開發和維護工作。</p>
+                            <ul>
+                                <li>開發響應式網站前端界面，提升用戶體驗</li>
+                                <li>優化網站性能，加載速度提升40%</li>
+                                <li>參與專案規劃會議，協助制定技術解決方案</li>
+                                <li>協調後端開發人員，確保前後端順利對接</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="mb-5">
+                    <h3 class="section-title">教育背景</h3>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5>國立台灣大學</h5>
+                            <h6 class="text-primary">資訊管理學系碩士</h6>
+                            <p class="exp-date">2013年9月 - 2015年6月</p>
+                            <p>研究方向：數位轉型與專案管理</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>國立台灣科技大學</h5>
+                            <h6 class="text-primary">資訊工程學系學士</h6>
+                            <p class="exp-date">2009年9月 - 2013年6月</p>
+                            <p>專業課程：軟體工程、資料結構、網頁程式設計、資料庫系統</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section>
+                    <h3 class="section-title">專業認證</h3>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>PMP (Project Management Professional)</h5>
+                                    <p class="exp-date">2018年取得，目前有效</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>CSM (Certified Scrum Master)</h5>
+                                    <p class="exp-date">2019年取得，目前有效</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>ITIL Foundation</h5>
+                                    <p class="exp-date">2020年取得，目前有效</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Google Analytics 認證</h5>
+                                    <p class="exp-date">2021年取得，目前有效</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p class="mb-0">© 2025 陳志明 | 網頁開發專案經理履歷</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
