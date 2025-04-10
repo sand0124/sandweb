@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網站開發專案經理 - 個人履歷</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            padding-top: 60px;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 30px;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .skill-card {
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            list-style: none;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #007bff;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 3px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #007bff;
+        }
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .progress {
+            height: 10px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- 導航欄 -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">陳佳欣</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">關於我</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">工作經歷</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">學歷背景</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">專業技能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">專案作品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">聯絡資訊</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首頁英雄區塊 -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <img src="/img/frank.jpg" alt="個人照片" class="rounded-circle mb-4">
+            <h1 class="display-4">陳佳欣</h1>
+            <p class="lead">資深網站開發專案經理</p>
+            <div class="mt-4">
+                <a href="#contact" class="btn btn-primary me-2">聯絡我</a>
+                <a href="#projects" class="btn btn-outline-light">查看作品</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 關於我 -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="fw-bold">關於我</h2>
+                    <hr class="w-25 mx-auto">
+                </div>
+                <div class="col-lg-6">
+                    <h3>個人簡介</h3>
+                    <p>擁有超過10年的網站開發與專案管理經驗，專精於打造使用者導向、符合不同需求情境網站應用解決方案。</p>
+                    <p>多年來，我協助客戶明確定義專案需求、提出最適化的策略，並負責從提案、時程規劃、執行到驗收的全流程管理。具備優異的跨部門溝通與協調能力，能有效整合團隊資源，確保專案順利落地並達成目標。</p>
+                    <p>身為一位充滿熱情的網站開發專案經理，我擅長引導團隊實現客戶需求與商業目標。曾服務於多家知名企業，並成功執行涵蓋私人企業、博物館與政府機關等多元領域的網站專案，協助客戶提升業務效率與使用者體驗。</p>
+                    <p>我始終相信，良好的溝通與協作是專案成功的關鍵。因此，我特別重視與客戶及開發團隊之間的密切合作，確保每一個專案都能如期、如質完成</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title">個人資料</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>姓名：</strong> 陳佳欣</li>
+                                <li class="mb-2"><strong>年齡：</strong> 47歲</li>
+                                <li class="mb-2"><strong>現居：</strong> 新北市汐止區</li>
+                                <li class="mb-2"><strong>語言：</strong> 中文、台語 (母語)、英文 (中等)</li>
+                                <li class="mb-2"><strong>電子郵件：</strong> frankchen0124@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作經歷 -->
+    <section id="experience" class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="fw-bold">工作經歷</h2>
+                    <hr class="w-25 mx-auto">
+                </div>
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <h4>網路多媒體專案經理</h4>
+                            <p class="text-muted mb-1">文化路徑有限公司 | 2023年 - 至今</p>
+                            <p>負責網站應用系統開發專案，包括企業活動網站和博物館特展網站、Web-base導覽應用系統。訪談定義客戶需求、協調設計、程式跨部門開發團隊，管控專案進度、確保專案如期、如質交付驗收。</p>
+                            <ul>
+                                <li>與客戶維持良好關係，同時維運多個客戶系統</li>
+                                <li>優化專案管理流程，如期完成專案驗收</li>
+                                <li>建立標準化專案文件模板，提升團隊協作效率</li>
+                            </ul>
+                        </li>
+                        <li class="timeline-item">
+                            <h4>網站開發專案經理</h4>
+                            <p class="text-muted mb-1">頑石創意有限公司 | 2006年 - 2023年</p>
+                            <p>管理互動多媒體、WEB-BASE網站系統、主題網站、行動APP，負責客戶需求分析、專案排程、資源分配與風險管理等工作。協調設計師、前後端開發人員與測試人員合作，確保專案品質。</p>
+                            <ul>
+                                <li>專案評估與提案計畫書的撰寫</li>
+                                <li>針對專案所需人力進行分析協調,執行時與程式設計師溝通,掌控專案時程</li>
+                                <li>針對執行專案進行分析思考可行方向，與團隊協調合作，於專案時程內完成WBS各項工作。</li>
+                            </ul>
+                        </li>
+                        <li class="timeline-item">
+                            <h4>專案執行企畫</h4>
+                            <p class="text-muted mb-1">大理資訊 | 2004年 - 2006年</p>
+                            <p>負責企業官網與電子商務平台的前端開發與維護，確保網站在各裝置上的良好顯示與使用體驗。</p>
+                            <ul>
+                                <li>專案訪談溝通專案</li>
+                                <li>專案企畫書撰寫</li>
+                                <li>網站前後端新功能,新流程規畫,雛型製作</li>
+                                <li>動畫製作，介面設計</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 學歷背景 -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="fw-bold">學歷背景</h2>
+                    <hr class="w-25 mx-auto">
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body">
+                            <h4 class="card-title">國立臺灣藝術大學</h4>
+                            <h6 class="text-muted">多媒體動畫研究所 碩士</h6>
+                            <p class="text-muted">2002年~2004年</p>
+                            <p>畢業論文：虛擬環境中跟隨鏡頭與尋路績效之關係研究</p>
+                            <p>主修課程：網路程式設計、多媒體動畫、web3D導覽、3D動畫、互動藝術裝置</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body">
+                            <h4 class="card-title">國立中央大學</h4>
+                            <h6 class="text-muted">企業管理學系 資訊管理專長組</h6>
+                            <p class="text-muted">1996年~2000年</p>
+                            <p>畢業專題：企業政策專題</p>
+                            <p>主修課程：物件導向程式設計、資訊管理概論、系統分析與設計</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-4">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <h4 class="card-title">專業證照</h4>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>PMP (Project Management Professional) 專案管理專業人員認證</li>
+                                        
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專業技能 -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="fw-bold">專業技能</h2>
+                    <hr class="w-25 mx-auto">
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <h4>專案管理技能</h4>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>需求分析與規劃</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>排程管理</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>風險管理</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>團隊領導與溝通</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>技術技能</h4>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>網站開發 (HTML/CSS/JavaScript)</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>UX/UI (figma/Photoshop/illustrator)</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Ai應用（Chatgpt/Grock/Claude/Perplexit/NotebookLM）</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>程式工具(VSCode/POSTMAN/Chrome開發人員工具)</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card skill-card border-0 shadow h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tasks fa-3x text-primary mb-3"></i>
+                            <h5>專案管理工具</h5>
+                            <p>JIRA有基礎認識, MS Project, GitHub, Notion ,oogle doc</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card skill-card border-0 shadow h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                            <h5>開發框架</h5>
+                            <p>React, Angular,Treejs,Bootstrap有基礎的認識</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card skill-card border-0 shadow h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-server fa-3x text-primary mb-3"></i>
+                            <h5>伺服器管理</h5>
+                            <p>IIS,Ngix, Linux基礎設定</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card skill-card border-0 shadow h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                            <h5>分析工具</h5>
+                            <p>Google Analytics, SEO基礎,無障礙網站規範</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專案作品 -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="fw-bold">專案作品</h2>
+                    <hr class="w-25 mx-auto">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow h-100">
+                        <img src="/img/web3.png" class="card-img-top" alt="電商平台專案">
+                        <div class="card-body">
+                            <h5 class="card-title">國立自然科學博物館解謎探索任務平台</h5>
+                            <p class="text-muted">2023年</p>
+                            <p class="card-text">為博物館建立Web-base線上解謎任務平台，提供後台建立任務機制與前台任務探索機制，已運用在館內常設展與特展，並獲得客戶好評！</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-1">Angular</span>
+                                <span class="badge bg-primary me-1">Node.js</span>
+                                <span class="badge bg-primary me-1">MSSQL</span>
+                                <span class="badge bg-primary me-1">Windows server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow h-100">
+                        <img src="/img/web2.png" class="card-img-top" alt="政府機關網站重構">
+                        <div class="card-body">
+                            <h5 class="card-title">中央銀行券幣數位博物館</h5>
+                            <p class="text-muted">2018年-2025年</p>
+                            <p class="card-text">為央行重新規劃與開發券幣介紹，典藏寶庫，虛擬展覽館的響應式網站，提升使用體驗與資訊可及性。</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-1">Angular</span>
+                                <span class="badge bg-primary me-1">Node.js</span>
+                                <span class="badge bg-primary me-1">MSSQL</span>
+                                <span class="badge bg-primary me-1">Windows server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card border-0 shadow h-100">
+                        <img src="/img/web1.png" class="card-img-top" alt="企業內部管理系統">
+                        <div class="card-body">
+                            <h5 class="card-title">故宮5G台灣意象線上展</h5>
+                            <p class="text-muted">2022年</p>
+                            <p class="card-text">因應疫情期間為故宮研發線上web3D虛擬展覽，與團隊從研發開始研究相關技術方案，並如期完成客戶需求，建構豐富趣味的線上虛擬展。</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-1">Angular</span>
+                                <span class="badge bg-primary me-1">Node.js</span>
+                                <span class="badge bg-primary me-1">SQL Server</span>
+                                <span class="badge bg-primary me-1">Windows  server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡資訊 -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="fw-bold">聯絡資訊</h2>
+                    <hr class="w-25 mx-auto">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-md-4 mb-4">
+                                    <i class="fas fa-envelope contact-icon"></i>
+                                    <h5>電子郵件</h5>
+                                    <p>sand0124@gmail.com</p>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <i class="fas fa-phone contact-icon"></i>
+                                    <h5>電話</h5>
+                                    <p>0918-826-721</p>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                                    <h5>地址</h5>
+                                    <p>新北市汐止區</p>
+                                </div>
+                            </div>
+                            <hr>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12 text-center">
+                    <h4>社群媒體</h4>
+                    <div class="mt-3">
+                        <a href="#" class="btn btn-outline-primary mx-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025 陳佳欣 - 網站開發專案經理個人履歷</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript 與相依套件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 平滑滾動效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 在滾動時啟用 Bootstrap 的 scrollspy
+        var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '#navbar'
+        });
+    </script>
+</body>
+</html>
