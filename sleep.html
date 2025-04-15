@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睡眠品質實驗</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* 自訂 CSS 樣式 */
+        body {
+            font-family: sans-serif;
+        }
+        .hero {
+            background-image: url('https://c.pxhere.com/photos/3e/bd/photo-78420.jpg!d');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 2rem;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .navbar {
+            margin-bottom: 2rem;
+        }
+        .mood-options, .quality-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .form-check-inline {
+            margin-right: 1rem;
+        }
+        /* 您可以根據需求添加更多樣式 */
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">睡眠實驗</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mood-tracker-title">心情記錄</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sleep-audio-title">享睡眠</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#health-education-title">談衛教</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h2>探索您的睡眠品質</h2>
+            <p>透過簡單的記錄和引導，了解並改善您的睡眠。</p>
+            </div>
+    </div>
+
+    <div class="container mt-5">
+        <section id="mood-tracker" class="mb-4">
+            <h2 id="mood-tracker-title">心情記錄</h2>
+            <form id="moodForm">
+                <div class="form-group">
+                    <label>睡前心情 (0-10分，0最差，10最好)：</label>
+                    <div class="mood-options">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood0" value="0" required>
+                            <label class="form-check-label" for="bedtimeMood0">0 (最差)</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood1" value="1">
+                            <label class="form-check-label" for="bedtimeMood1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood2" value="2">
+                            <label class="form-check-label" for="bedtimeMood2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood3" value="3">
+                            <label class="form-check-label" for="bedtimeMood3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood4" value="4">
+                            <label class="form-check-label" for="bedtimeMood4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood5" value="5">
+                            <label class="form-check-label" for="bedtimeMood5">5 (中等)</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood6" value="6">
+                            <label class="form-check-label" for="bedtimeMood6">6</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood7" value="7">
+                            <label class="form-check-label" for="bedtimeMood7">7</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood8" value="8">
+                            <label class="form-check-label" for="bedtimeMood8">8</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood9" value="9">
+                            <label class="form-check-label" for="bedtimeMood9">9</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="bedtimeMood" id="bedtimeMood10" value="10">
+                            <label class="form-check-label" for="bedtimeMood10">10 (最好)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>起床心情 (0-10分，0最差，10最好)：</label>
+                    <div class="mood-options">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood0" value="0" required>
+                            <label class="form-check-label" for="wakeupMood0">0 (最差)</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood1" value="1">
+                            <label class="form-check-label" for="wakeupMood1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood2" value="2">
+                            <label class="form-check-label" for="wakeupMood2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood3" value="3">
+                            <label class="form-check-label" for="wakeupMood3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood4" value="4">
+                            <label class="form-check-label" for="wakeupMood4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood5" value="5">
+                            <label class="form-check-label" for="wakeupMood5">5 (中等)</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood6" value="6">
+                            <label class="form-check-label" for="wakeupMood6">6</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood7" value="7">
+                            <label class="form-check-label" for="wakeupMood7">7</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood8" value="8">
+                            <label class="form-check-label" for="wakeupMood8">8</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood9" value="9">
+                            <label class="form-check-label" for="wakeupMood9">9</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wakeupMood" id="wakeupMood10" value="10">
+                            <label class="form-check-label" for="wakeupMood10">10 (最好)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>起床時睡眠品質 (1極差，2差，3尚可，4好，5很好)：</label>
+                    <div class="quality-options">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sleepQuality" id="sleepQuality1" value="1" required>
+                            <label class="form-check-label" for="sleepQuality1">1 極差</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sleepQuality" id="sleepQuality2" value="2">
+                            <label class="form-check-label" for="sleepQuality2">2 差</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sleepQuality" id="sleepQuality3" value="3">
+                            <label class="form-check-label" for="sleepQuality3">3 尚可</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sleepQuality" id="sleepQuality4" value="4">
+                            <label class="form-check-label" for="sleepQuality4">4 好</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sleepQuality" id="sleepQuality5" value="5">
+                            <label class="form-check-label" for="sleepQuality5">5 很好</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="recordMood()">提交心情與睡眠品質</button>
+                <p id="moodSubmitMessage" class="mt-2"></p>
+            </form>
+        </section>
+
+        <section id="sleep-audio" class="mb-4">
+            <h2 id="sleep-audio-title">享睡眠</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h5>自然音樂 (雨聲)</h5>
+                    <audio controls>
+                        <source src="audio/rain.mp3" type="audio/mpeg">
+                        您的瀏覽器不支持音頻播放。
+                    </audio>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5>輕音樂</h5>
+                    <audio controls>
+                        <source src="audio/light_music.mp3" type="audio/mpeg">
+                        您的瀏覽器不支持音頻播放。
+                    </audio>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5>人聲，放鬆訓練指導語</h5>
+                    <audio controls>
+                        <source src="audio/relaxation_guide.mp3" type="audio/mpeg">
+                        您的瀏覽器不支持音頻播放。
+                    </audio>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5>音樂 + 人聲，半夜醒時使用</h5>
+                    <audio controls>
+                        <source src="audio/night_audio.mp3" type="audio/mpeg">
+                        您的瀏覽器不支持音頻播放。
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <section id="health-education">
+            <h2 id="health-education-title">談衛教</h2>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="insomnia-tab" data-toggle="tab" href="#insomnia" role="tab" aria-controls="insomnia" aria-selected="true">何謂失眠</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sleep-rules-tab" data-toggle="tab" href="#sleep-rules" role="tab" aria-controls="sleep-rules" aria-selected="false">好眠守則</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="cbti-tab" data-toggle="tab" href="#cbti" role="tab" aria-controls="cbti" aria-selected="false">失眠認知行為治療CBTi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="related-links-tab" data-toggle="tab" href="#related-links" role="tab" aria-controls="related-links" aria-selected="false">相關網頁</a>
+                </li>
+            </ul>
+            <div class="tab-content mt-3" id="myTabContent">
+                <div class="tab-pane fade show active" id="insomnia" role="tabpanel" aria-labelledby="insomnia-tab">
+                    <h3>何謂失眠</h3>
+                    <p>這裡填寫關於失眠的衛教資訊...</p>
+                </div>
+                <div class="tab-pane fade" id="sleep-rules" role="tabpanel" aria-labelledby="sleep-rules-tab">
+                    <h3>好眠守則</h3>
+                    <p>這裡填寫好眠守則的衛教資訊...</p>
+                    <p>您可以提醒使用者回顧「睡前記錄心情」的填寫。</p>
+                </div>
+                <div class="tab-pane fade" id="cbti" role="tabpanel" aria-labelledby="cbti-tab">
+                    <h3>失眠認知行為治療CBTi</h3>
+                    <p>這裡填寫關於失眠認知行為治療CBTi的衛教資訊...</p>
+                </div>
+                <div class="tab-pane fade" id="related-links" role="tabpanel" aria-labelledby="related-links-tab">
+                    <h3>相關網頁</h3>
+                    <ul>
+                        <li><a href="https://sleep.nccu.edu.tw/" target="_blank">政大睡眠實驗室 - 好眠e學 (請替換成實際網址)</a></li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function recordMood() {
+            const bedtimeMood = document.querySelector('input[name="bedtimeMood"]:checked').value;
+            const wakeupMood
