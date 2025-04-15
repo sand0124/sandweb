@@ -45,7 +45,7 @@
             padding: 2rem;
             border-radius: 10px;
             margin-bottom: 3rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 
         }
         #sleep-audio {
             background-color: #e8f5e9; /* 淺綠背景 */
@@ -62,26 +62,55 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         /* 置頂按鈕樣式 */
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            line-height: 50px;
-            cursor: pointer;
-            z-index: 999;
-            display: none;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-        }
-        #back-to-top:hover {
-            background-color: #0056b3;
-        }
+        /* 自訂 CSS 樣式 */
+    body {
+        font-family: sans-serif;
+    }
+    /* ... 其他現有樣式保持不變 ... */
+
+    /* 浮動圖片樣式 */
+    #floating-image {
+        position: fixed;
+        bottom: 20px;
+        right: 80px; /* 位於置頂按鈕左側，距離右邊80px */
+        width: 200;
+        height: 200;
+        z-index: 998; /* 低於置頂按鈕，避免遮擋 */
+        display: none; /* 初始隱藏 */
+        transition: opacity 0.3s ease;
+    }
+    #floating-image img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        border-radius: 10px;
+
+    }
+    #floating-image:hover {
+        opacity: 0.8; /* 滑鼠懸停時略透明 */
+    }
+
+    /* 置頂按鈕樣式 */
+    #back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        z-index: 999;
+        display: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+    #back-to-top:hover {
+        background-color: #0056b3;
+    }
     </style>
 </head>
 <body>
@@ -337,7 +366,10 @@
         </section>
     </div>
 
-    <!-- 置頂按鈕 -->
+    <!-- 浮動圖片和置頂按鈕 -->
+    <div id="floating-image" title="睡眠主題圖片">
+        <img src="./img/koala2.png" alt="Moon" style="width: 200px; height: 200px;">
+    </div>
     <div id="back-to-top" title="回到頂部">
         <i class="fas fa-arrow-up"></i>
     </div>
@@ -387,6 +419,28 @@
                 behavior: "smooth"
             });
         });
+        // 置頂按鈕和浮動圖片功能
+    window.onscroll = function() {
+        const floatingImage = document.getElementById("floating-image");
+        const backToTop = document.getElementById("back-to-top");
+        // 當頁面滾動超過200px時顯示按鈕和圖片
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            floatingImage.style.display = "block";
+            backToTop.style.display = "block";
+        } else {
+            floatingImage.style.display = "none";
+            backToTop.style.display = "none";
+        }
+    };
+
+    // 點擊按鈕返回頂部
+    document.getElementById("back-to-top").addEventListener("click", function() {
+        // 平滑滾動到頂部
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
     </script>
 </body>
 </html>
