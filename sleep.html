@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>睡眠品質實驗</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         /* 自訂 CSS 樣式 */
         body {
@@ -18,6 +19,8 @@
             text-align: center;
             padding: 100px 0;
             margin-bottom: 2rem;
+            background-color: rgba(0, 0, 0, 0.5); /* 添加半透明背景作為備用 */
+            background-blend-mode: overlay;
         }
         .hero h2 {
             font-size: 2.5rem;
@@ -25,6 +28,7 @@
         }
         .navbar {
             margin-bottom: 2rem;
+            background-color: #f8f9fa; /* 導航欄背景 */
         }
         .mood-options, .quality-options {
             display: flex;
@@ -35,7 +39,49 @@
         .form-check-inline {
             margin-right: 1rem;
         }
-        /* 您可以根據需求添加更多樣式 */
+        /* 區塊樣式 */
+        #mood-tracker {
+            background-color: #e3f2fd; /* 淺藍背景 */
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #sleep-audio {
+            background-color: #e8f5e9; /* 淺綠背景 */
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #health-education {
+            background-color: #fff3e0; /* 淺橙背景 */
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* 置頂按鈕樣式 */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 999;
+            display: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        #back-to-top:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -65,7 +111,7 @@
         <div class="container">
             <h2>探索您的睡眠品質</h2>
             <p>透過簡單的記錄和引導，了解並改善您的睡眠。</p>
-            </div>
+        </div>
     </div>
 
     <div class="container mt-5">
@@ -234,7 +280,7 @@
             </div>
         </section>
 
-        <section id="health-education">
+        <section id="health-education" class="mb-4">
             <h2 id="health-education-title">談衛教</h2>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
@@ -268,10 +314,15 @@
                     <h3>相關網頁</h3>
                     <ul>
                         <li><a href="https://sleep.nccu.edu.tw/" target="_blank">政大睡眠實驗室 - 好眠e學 (請替換成實際網址)</a></li>
-                        </ul>
+                    </ul>
                 </div>
             </div>
         </section>
+    </div>
+
+    <!-- 置頂按鈕 -->
+    <div id="back-to-top" title="回到頂部">
+        <i class="fas fa-arrow-up"></i>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -279,5 +330,46 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function recordMood() {
+            // 檢查是否所有必填項都已選擇
+            if(!document.querySelector('input[name="bedtimeMood"]:checked') || 
+               !document.querySelector('input[name="wakeupMood"]:checked') || 
+               !document.querySelector('input[name="sleepQuality"]:checked')) {
+                document.getElementById('moodSubmitMessage').textContent = '請選擇所有選項後再提交';
+                return;
+            }
+            
             const bedtimeMood = document.querySelector('input[name="bedtimeMood"]:checked').value;
-            const wakeupMood
+            const wakeupMood = document.querySelector('input[name="wakeupMood"]:checked').value;
+            const sleepQuality = document.querySelector('input[name="sleepQuality"]:checked').value;
+            
+            // 這裡可以將數據發送到服務器或保存到本地存儲
+            // 例如：localStorage.setItem('sleepData', JSON.stringify({bedtimeMood, wakeupMood, sleepQuality}));
+            
+            // 顯示提交成功消息
+            document.getElementById('moodSubmitMessage').textContent = '記錄已保存！感謝您的參與。';
+            
+            // 清空表單或其他操作
+            // document.getElementById('moodForm').reset();
+        }
+
+        // 置頂按鈕功能
+        window.onscroll = function() {
+            // 當頁面滾動超過200px時顯示按鈕
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                document.getElementById("back-to-top").style.display = "block";
+            } else {
+                document.getElementById("back-to-top").style.display = "none";
+            }
+        };
+
+        // 點擊按鈕返回頂部
+        document.getElementById("back-to-top").addEventListener("click", function() {
+            // 平滑滾動到頂部
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</body>
+</html>
